@@ -52,13 +52,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import mapValuesAsync from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@deno/mod.js';
+import mapValuesAsync from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@v0.1.0-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@deno/mod.js';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@v0.1.0-deno/mod.js';
 ```
 
 #### mapValuesAsync( obj, \[options,] transform, done )
@@ -334,7 +334,7 @@ The function accepts the same `options` as `mapValuesAsync()`.
 ```javascript
 var resolve = require( 'path' ).resolve;
 var stats = require( 'fs' ).stat;
-import mapValuesAsync from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@deno/mod.js';
+import mapValuesAsync from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@v0.1.0-deno/mod.js';
 
 var files = {
     'file1': resolve( __dirname, 'package.json' ),
