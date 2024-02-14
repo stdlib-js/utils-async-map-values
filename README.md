@@ -52,13 +52,18 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import mapValuesAsync from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/utils-async-map-values/tags). For example,
+
+```javascript
 import mapValuesAsync from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@v0.2.0-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@v0.2.0-esm/index.mjs';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@esm/index.mjs';
 ```
 
 #### mapValuesAsync( obj, \[options,] transform, done )
@@ -339,7 +344,7 @@ The function accepts the same `options` as `mapValuesAsync()`.
 
 var resolve = require( 'path' ).resolve;
 var stats = require( 'fs' ).stat;
-import mapValuesAsync from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@v0.2.0-esm/index.mjs';
+import mapValuesAsync from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@esm/index.mjs';
 
 var files = {
     'file1': resolve( __dirname, 'package.json' ),
