@@ -45,20 +45,32 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/utils-async-map-values
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import mapValuesAsync from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@esm/index.mjs';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@esm/index.mjs';
+var mapValuesAsync = require( '@stdlib/utils-async-map-values' );
 ```
 
 #### mapValuesAsync( obj, \[options,] transform, done )
@@ -288,7 +300,7 @@ var obj1 = {
 };
 
 f( obj1, done );
-// => { 'a': 'beep:1', 'b': 'beep:2' }
+// e.g., => { 'a': 'beep:1', 'b': 'beep:2' }
 
 var obj2 = {
     'c': 3,
@@ -296,7 +308,7 @@ var obj2 = {
 };
 
 f( obj2, done );
-// => { 'c': 'beep:3', 'd': 'beep:4' }
+// e.g., => { 'c': 'beep:3', 'd': 'beep:4' }
 ```
 
 The function accepts the same `options` as `mapValuesAsync()`.
@@ -331,15 +343,11 @@ The function accepts the same `options` as `mapValuesAsync()`.
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
+```javascript
 var resolve = require( 'path' ).resolve;
 var stats = require( 'fs' ).stat;
-import mapValuesAsync from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-map-values@esm/index.mjs';
+var format = require( '@stdlib/string-format' );
+var mapValuesAsync = require( '@stdlib/utils-async-map-values' );
 
 var files = {
     'file1': resolve( __dirname, 'package.json' ),
@@ -358,7 +366,7 @@ function getStats( file, next ) {
 
     function onStats( error, data ) {
         if ( error ) {
-            error = new Error( 'unable to retrieve stats: '+file );
+            error = new Error( format( 'unable to retrieve stats: %s', file ) );
             return next( error );
         }
         next( null, data );
@@ -366,10 +374,6 @@ function getStats( file, next ) {
 }
 
 mapValuesAsync( files, getStats, done );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -408,7 +412,7 @@ mapValuesAsync( files, getStats, done );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -475,9 +479,9 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/utils/async/map-keys]: https://github.com/stdlib-js/utils-async-map-keys/tree/esm
+[@stdlib/utils/async/map-keys]: https://github.com/stdlib-js/utils-async-map-keys
 
-[@stdlib/utils/map-values]: https://github.com/stdlib-js/utils-map-values/tree/esm
+[@stdlib/utils/map-values]: https://github.com/stdlib-js/utils-map-values
 
 <!-- </related-links> -->
 
